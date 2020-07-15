@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="paperSize">
+        <item>A4</item>
+        <item>A4横向</item>
+        <item>A5</item>
+        <item>A5横向</item>
+        <item>B5</item>
+        <item>B5横向</item>
+    </string-array>
+</resources>

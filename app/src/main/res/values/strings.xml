@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ZT_Scan</string>
+    <string name="start_Scan">开启扫描</string>
+    <string name="clear_error">清除错误</string>
+    <string name="restoration">设备复位</string>
+    <string name="paper">卡纸复位</string>
+    <string name="scanner">扫描设置</string>
+    <string name="set">系统设置</string>
+    <string name="scanner_set">扫描设置</string>
+    <string name="scan_pattern">扫描模式</string>
+    <string name="scan_one_paper_pattern">单面扫描</string>
+    <string name="scan_two_paper_pattern">双面扫描</string>
+    <string name="scan_color">色彩模式</string>
+    <string name="color">彩色</string>
+    <string name="color_black">黑白</string>
+    <string name="format">格式</string>
+    <string name="jpeg">JPEG</string>
+    <string name="quality">品质</string>
+    <string name="qualityLow">150dpi(低)</string>
+    <string name="qualityStandard">200dpi(标准)</string>
+    <string name="qualityHigh">300dpi(高)</string>
+    <string name="correct_prejudiced">是否自动纠偏</string>
+    <string name="tailor">是否自动裁剪</string>
+    <string name="two_detection">是否双张检测</string>
+    <string name="blank_paper">是否跳过空白页</string>
+    <string name="paper_size">纸张尺寸</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="about">关于</string>
+    <string name="transport_setting">传送</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="language">语言</string>
+    <string name="simple_chinese">简体中文</string>
+    <string name="version">版本</string>
+    <string name="open">开</string>
+    <string name="off">关</string>
+    <string name="uDisc">U盘</string>
+    <string name="eMail">邮件</string>
+    <string name="ensure">确定</string>
+    <string name="emailReceiver">收件人邮箱地址：</string>
+    <string name="emailSender">发件人邮箱账号：</string>
+    <string name="emailPassword">发件人邮箱密码：</string>
+    <string name="emailSmtpServer">发件人SMTP服务器地址：</string>
+    <string name="emailSegmentSize">邮件附件分卷大小（单位KB）：</string>
+    <string name="error">出错了，扫描已停止！</string>
+    <string name="scanFinished">扫描完成！</string>
+    <string name="uploadSuccess">上传完成！</string>
+    <string name="uploadFail">上传失败，请重新上传！</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

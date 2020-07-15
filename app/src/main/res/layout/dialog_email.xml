@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_email_view"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/holo_orange_dark"
+    android:gravity="center">
+
+    <LinearLayout
+    android:id="@+id/dev_buttons"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#1890FF"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <Button
+        android:id="@+id/dev_ensure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:textSize="15sp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/ensure"/>
+
+    <Button
+        android:id="@+id/dev_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="15sp"
+        android:text="@string/cancel"/>
+
+</LinearLayout>
+
+
+    <ScrollView
+        android:background="#ccc"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/dev_buttons">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <TextView
+            android:id="@+id/dev_receiver_label_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emailReceiver"
+            android:textSize="12sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/dev_receiver_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/dev_sender_label_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emailSender"
+            android:textSize="12sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/dev_sender_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/dev_password_label_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emailPassword"
+            android:textSize="12sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/dev_password_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/dev_smtpserver_label_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emailSmtpServer"
+            android:textSize="12sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/dev_smtpserver_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/dev_segmentsize_label_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emailSegmentSize"
+            android:textSize="12sp"
+            >
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/dev_segmentsize_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword">
+
+        </EditText>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
