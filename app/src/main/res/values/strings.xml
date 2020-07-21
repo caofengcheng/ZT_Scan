@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ZT_Scan</string>
+    <string name="app_name">树莓扫描</string>
     <string name="start_Scan">开启扫描</string>
     <string name="clear_error">清除错误</string>
     <string name="restoration">设备复位</string>

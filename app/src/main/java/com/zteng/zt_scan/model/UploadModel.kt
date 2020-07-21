@@ -50,6 +50,9 @@ class UploadModel : BaseModel(), UploadContract.Model {
                     override fun onSuccess(result: ServiceResponse) {
                         if (result.code.equals("200")) {
                             Log.i("UploadModel", result.code)
+                            mPresenter!!.isSuccess(true)
+                        }else{
+                            mPresenter!!.isSuccess(false)
                         }
                     }
 

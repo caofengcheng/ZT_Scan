@@ -73,6 +73,7 @@ class ScanActivity : BaseActivity<UploadPresenter>(), UploadContract.View {
     override fun releaseData() {
     }
 
+
     /**
      *上传成功
      */
@@ -80,6 +81,9 @@ class ScanActivity : BaseActivity<UploadPresenter>(), UploadContract.View {
 
         //上传成功
         if (success) {
+            deleteFolderFile()
+            Application.isScanning = true
+            upload_ll.visibility = View.GONE
             Toast.makeText(this, R.string.uploadSuccess, Toast.LENGTH_SHORT).show()
             finish()
         } else { //上传失败
@@ -94,7 +98,7 @@ class ScanActivity : BaseActivity<UploadPresenter>(), UploadContract.View {
         object : Handler(Looper.getMainLooper()) {
             override fun handleMessage(msg: Message) {
                 super.handleMessage(msg)
-                var info: BitmapInfo? = null
+                var info: BitmapInfo?
                 if (msg.obj != null) {
                     info = msg.obj as BitmapInfo
                     mList.add(info)
@@ -157,9 +161,17 @@ class ScanActivity : BaseActivity<UploadPresenter>(), UploadContract.View {
         intentFilter.addAction(EventDef.STATE_ERROR)
         intentFilter.addAction(EventDef.STATE_ERROR_JAM)
         registerReceiver(mReceiver, intentFilter)
-        Log.d(this@ScanActivity.toString(), "onResume: " + Application.isScanning)
-        btn_back.isEnabled = Application.isScanning
-        btn_stop.isEnabled = Application.isScanning
+        Log.d(this@ScanActivity.toString(), "onResume: ${Application.isScanning}")
+        btn_stop.isEnabled = true
+        if (Application.isScanning){
+            btn_back.isEnabled = true
+            btn_stop.text = "停止扫描"
+       }else{
+            btn_back.isEnabled = false
+            btn_stop.text = "开始上传"
+       }
+
+
     }
 
     private fun checkUdisk() {
@@ -211,6 +223,14 @@ class ScanActivity : BaseActivity<UploadPresenter>(), UploadContract.View {
             ).show()
             return
         }
+        if (!Application.isScanning){
+            Toast.makeText(
+                this,
+                "当前扫描已完成，请上传！",
+                Toast.LENGTH_SHORT
+            ).show()
+            return
+        }
         super.onBackPressed()
     }
 
@@ -230,6 +250,7 @@ class ScanActivity : BaseActivity<UploadPresenter>(), UploadContract.View {
                 HGScanManager.getInstance().stopScan()
                 btn_stop.isEnabled = false
             } else {
+                upload_ll.visibility = View.VISIBLE
                 mPresenter!!.upload(mList)
                 btn_stop.isEnabled = false
                 btn_back.isEnabled = true
@@ -237,6 +258,17 @@ class ScanActivity : BaseActivity<UploadPresenter>(), UploadContract.View {
         }
     }
 
+    /**
+     * 删除指定目录下的图片
+     */
+    private fun deleteFolderFile(){
+        Log.d(this@ScanActivity.toString(), "deleteFolder")
+        for (i in mList){
+            val file = File(i.path)
+            Log.d(this@ScanActivity.toString(), "deleteFolder:${file}")
+            file.delete()
+        }
+    }
 
     override fun onDestroy() { //释放预览接口以避免可能的内存泄露
         HGScanManager.getInstance().releasePreviewCallback()
