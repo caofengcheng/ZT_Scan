@@ -13,5 +13,5 @@ class ServiceResponse {
      * errs : null
      */
     val code: String? = null
-    private val message: String? = null
+    val message: String? = null
 }

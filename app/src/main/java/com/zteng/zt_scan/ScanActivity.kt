@@ -1,5 +1,6 @@
 package com.zteng.zt_scan
 
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -27,6 +28,7 @@ import java.io.File
 
 
 class ScanActivity : BaseActivity<UploadPresenter>(), UploadContract.View {
+
 
     private val IMG_DIR = "/sdcard/picture"
     private var isScanning = true
@@ -87,10 +89,17 @@ class ScanActivity : BaseActivity<UploadPresenter>(), UploadContract.View {
             Toast.makeText(this, R.string.uploadSuccess, Toast.LENGTH_SHORT).show()
             finish()
         } else { //上传失败
-            Toast.makeText(this, R.string.uploadFail, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, R.string.uploadFail, Toast.LENGTH_SHORT).show()
             btn_stop.isEnabled = true
             btn_back.isEnabled = false
         }
+    }
+
+    /**
+     * 上传失败问题处理
+     */
+    override fun message(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
 

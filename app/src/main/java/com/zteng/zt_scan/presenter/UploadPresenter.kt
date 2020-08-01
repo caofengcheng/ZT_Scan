@@ -1,6 +1,5 @@
 package com.zteng.zt_scan.presenter
 
-import android.content.Context
 import com.zteng.mvp.base.BasePresenter
 import com.zteng.mvp.entity.BitmapInfo
 import com.zteng.zt_scan.contract.UploadContract
@@ -27,7 +26,10 @@ class UploadPresenter : BasePresenter<UploadContract.Model, UploadContract.View>
         mModel?.upload(list)
     }
 
-    override fun isSuccess(success: Boolean) {
+    override fun isSuccess(success: Boolean, msg: String?) {
+        if (!success && msg != null) {
+            mView.message(msg)
+        }
         mView.isSuccess(success)
     }
 

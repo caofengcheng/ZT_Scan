@@ -62,14 +62,12 @@ open class Application : Application() {
                     intent.putExtra("event", code)
                     sendBroadcast(intent)
                 }
-                else -> {
-                }
+
             }
             if (code == EventDef.S_EVT_SCAN_STOPPED) {
                 isScanning = false
                 sendBroadcast(Intent("com.hugaaoscan.finished"))
             }
         }
-
 
 }

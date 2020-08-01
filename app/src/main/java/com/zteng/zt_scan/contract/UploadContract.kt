@@ -1,6 +1,5 @@
 package com.zteng.zt_scan.contract
 
-import android.content.Context
 import com.zteng.mvp.base.BaseModelInterface
 import com.zteng.mvp.base.BasePresenterInterface
 import com.zteng.mvp.base.BaseView
@@ -26,11 +25,12 @@ interface UploadContract {
          * 上传是否成功
          */
         fun isSuccess(success: Boolean)
+        fun message(msg: String)
     }
 
     interface Presenter : BasePresenterInterface<View> {
         fun upload(list: MutableList<BitmapInfo>)
-        fun isSuccess(success: Boolean)
+        fun isSuccess(success: Boolean, msg: String?)
     }
 
 }
